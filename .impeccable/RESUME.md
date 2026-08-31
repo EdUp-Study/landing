@@ -37,22 +37,39 @@ deliberately so every rung of the ladder appears (Alustamata 4, Alustatud 3,
 Harjutamisel 4, Arenemas 6, Kinnistumas 6, Omandatud 4, Laiendamas 2). See
 PRODUCT.md for the clearance status, which is **still outstanding**.
 
+The image is the **tree canvas only**. The Kokkuvõte panel used to be baked
+into it, which squeezed the tree to 0.59x and made its labels ~8px; the panel is
+now static markup on the page (`.oakp`) and the tree renders at 0.96x.
+
 To recapture: log in to the local app on :8000 (`app.scripts.reset_local_dev_logins`
 restores the documented dev passwords), then screenshot
-`/teacher/grades/15/study-path?student_id=93` clipped to `.oak-layout` with the
-`.oak-note` hidden. Viewport 2000px wide for the landscape file, 1000px for the
-portrait one, at deviceScaleFactor 2.
+`/teacher/grades/15/study-path?student_id=93` clipped to **`.oak-scroll`**
+(`SEL=.oak-scroll node capture-tree.mjs`). Viewport **1350** for the wide file
+(1043x670, renders at 0.96x) and **1000** for the portrait one, deviceScaleFactor 2.
+If the panel data changes, the markup numbers must be updated to match —
+they are hand-entered and nothing checks them against the app.
 
-## Two known false positives in the design hook
+Note `timeout` does not exist on macOS; wrapping the capture in it silently
+fails. Chrome also takes >2 min to start when several instances contend, so run
+captures one at a time.
 
-Both measured, both safe to ignore — do not "fix" them:
+## Six known false positives in the design hook
 
-- `cramped-padding` on `section.tint`: the detector reads `padding: 86px 0` on
-  the section and stops. The horizontal inset comes from the child `.wrap`;
+All measured, all safe to ignore — do not "fix" them:
+
+- `cramped-padding` on `section.tint` (x2): the detector reads `padding: 86px 0`
+  on the section and stops. The horizontal inset comes from the child `.wrap`;
   measured, text sits **224px** from both edges.
-- `flat-type-hierarchy` reporting 12.8/14.4/16px: it cannot resolve `clamp()`,
-  so it misses the h1 and h2. The rendered scale is 49.6 / 36.8 / 19.2 / 17 /
-  16 / 14.4 / 12.8px.
+- `cramped-padding` on `div.art`: measured inset below the caption is **23px**,
+  well over the 8px the rule asks for.
+- `flat-type-hierarchy` reporting 11/12.8/14.4/16px: it cannot resolve
+  `clamp()`, so it misses the h1 and h2. The rendered scale is 49.6 / 36.8 /
+  19.2 / 17 / 16 / 14.4 / 12.8px.
+- `repeating-stripes-gradient`: the green hatch on the Alustatud bar segment.
+  It is semantic, not decorative — it is the application's own treatment for a
+  state drawn on a leaf as an *absence*, and an invisible segment would read as
+  a gap.
+- The 404 page reports `flat-type-hierarchy` for the same `clamp()` reason.
 
 ## Loose ends
 

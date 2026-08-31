@@ -113,9 +113,12 @@ which the homepage footer links. There are no other routes, no blog, no docs.
 
 **The app entrance.** The header's "Logi sisse" points at
 `https://edup.fly.dev/login`. That host is behind the same Basic Auth wall, so a
-visitor who clicks it currently meets a browser password prompt rather than a
-login screen — noted here as a fact about the surface, not as a resolved
-decision.
+visitor who clicks it meets a browser password prompt rather than a login
+screen. A 2026-08-31 critique raised this as a dead end for the majority of
+visitors — nobody can self-register, so almost every new visitor who clicks the
+page's one filled button hits a wall. **The user reviewed it and confirmed the
+current setup is fine**; it is a resolved decision, not an open item. Do not
+re-raise it.
 
 **Contact.** `info@educationaluplift.com`; Tallinn, Eesti. There is no phone
 number, no contact form and no address beyond the city.
@@ -168,6 +171,12 @@ number, no contact form and no address beyond the city.
   same evidence as the previous capture. The caption still names them as
   fictional even though they are not rendered, which is a disclosure of
   provenance rather than of anything visible.
+
+  **The disclosure is back on the page.** The caption was briefly removed with
+  the section header rework and restored on 2026-08-31 reading
+  *"Tegu on näidisandmel põhjal loodud õpipuuga"*. It now has to cover more than
+  the image: the Kokkuvõte panel beside it is real markup, so its numbers read
+  as a claim rather than as a screenshot of one.
 
   **The marks are authored, not observed.** The pupil's 29 grade-4 rungs were
   deliberately set in the local development database so that every rung of the

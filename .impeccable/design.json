@@ -213,6 +213,81 @@
           "#98A2CE",
           "#E3E7F4"
         ]
+      },
+      "skill-beginning": {
+        "role": "secondary",
+        "displayName": "Harjutamisel",
+        "canonical": "#FDBA74",
+        "tonalRamp": [
+          "#2A1405",
+          "#4A2409",
+          "#6B3A0E",
+          "#96551A",
+          "#C07A28",
+          "#FDBA74",
+          "#FDD5AA",
+          "#FEEBD8"
+        ]
+      },
+      "skill-easy": {
+        "role": "secondary",
+        "displayName": "Arenemas",
+        "canonical": "#A9C785",
+        "tonalRamp": [
+          "#1F2F08",
+          "#2C440C",
+          "#3A5A11",
+          "#4C7419",
+          "#639922",
+          "#A9C785",
+          "#CFE0B4",
+          "#EAF2DE"
+        ]
+      },
+      "skill-medium": {
+        "role": "secondary",
+        "displayName": "Kinnistumas",
+        "canonical": "#639922",
+        "tonalRamp": [
+          "#1F2F08",
+          "#2C440C",
+          "#3A5A11",
+          "#4C7419",
+          "#639922",
+          "#A9C785",
+          "#CFE0B4",
+          "#EAF2DE"
+        ]
+      },
+      "skill-advanced": {
+        "role": "secondary",
+        "displayName": "Omandatud",
+        "canonical": "#4C7419",
+        "tonalRamp": [
+          "#1F2F08",
+          "#2C440C",
+          "#3A5A11",
+          "#4C7419",
+          "#639922",
+          "#A9C785",
+          "#CFE0B4",
+          "#EAF2DE"
+        ]
+      },
+      "skill-extra": {
+        "role": "secondary",
+        "displayName": "Laiendamas",
+        "canonical": "#3A5A11",
+        "tonalRamp": [
+          "#1F2F08",
+          "#2C440C",
+          "#3A5A11",
+          "#4C7419",
+          "#639922",
+          "#A9C785",
+          "#CFE0B4",
+          "#EAF2DE"
+        ]
       }
     },
     "typographyMeta": {
@@ -350,7 +425,7 @@
     "northStar": "The product, shown plainly.",
     "overview": "This page took the standing exit in its direction round: the education-SaaS page done at the category standard, executed at full fidelity rather than subverted. Two earlier worlds were built and discarded — an angular ruled class-register, then a hand-invented blue — and the lesson of both is written into the rule below: nothing on this surface is invented.\n\nThe palette is not a brand palette designed for marketing. It is the application's own light theme, copied token-for-token out of frontend/src/App.css in the EdUp repo and kept under the same names, so the two surfaces can be diffed line by line. A visitor who clicks Logi sisse should not experience a change of world. The proof image is not an illustration of the product; it is a screenshot of it. The copy is the product owner's own Estonian.\n\nThe one composed decision is the shape language, and it is stated once: the corner radius tracks the size of the box, at roughly a quarter of its side. That ratio was already latent in the icon slots (12px on a 46px square) and is now the whole page's rule, which is why nothing here is a pill or a circle.",
     "keyCharacteristics": [
-      "Left-aligned throughout; the content edge never moves between sections.",
+      "Left-aligned throughout; the content edge holds across every section but one — the õpipuu figure, which is deliberately wider.",
       "Alternating bg-primary / surface-sub bands give section rhythm without rules or dividers.",
       "Every icon is Lucide, inlined, inheriting currentColor — never given a colour of its own.",
       "Two hues only: a blue that carries every interactive surface, and an amber that appears exactly once.",
@@ -387,6 +462,16 @@
         "name": "The Quarter-Side Rule",
         "body": "The corner radius is about a quarter of the box's shorter side, so it grows with the element instead of collapsing to a pill: 8px for chips and step numbers, 12px for buttons, icon slots, images and accordion items, 20px for cards and figures. Nothing on the page is border-radius 999px or 50%.",
         "section": "elevation"
+      },
+      {
+        "name": "The Ladder Is Not Decoration",
+        "body": "The five skill-* greens (plus the orange at the bottom) are the application's achievement ramp, copied from App.css --skill-* along with the --color-green family it rides. They appear only in the õpipuu panel, where each one means a rung. The stylesheet keeps App.css's color-mix() expressions rather than resolved hexes so the two surfaces cannot drift. There is deliberately no skill-none: \"not started\" is an absence, drawn as an outline. Never use a ladder colour for anything that is not a rung.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Wide Section Rule",
+        "body": "#opirada uses .wrap--wide (1520px) because the õpipuu is the page's proof and cannot be both legible and narrow: the tree is a raster with a fixed aspect, so at the 1180px column a readable rendering was 647px tall and pushed the summary panel below it. The extra width buys the panel a column beside the tree. This is the only section allowed to opt out, its left edge does move relative to the rest of the page, and that cost was accepted knowingly.",
+        "section": "layout"
       }
     ],
     "dos": [
@@ -401,7 +486,8 @@
       "Don't load a font, script, or asset from a third-party origin — EU data residency is a product constraint, not a preference.",
       "Don't add JavaScript for presentation. The page currently ships none.",
       "Don't claim anything the evidence list in PRODUCT.md doesn't support: there are no testimonials, no named pilot schools, no efficacy data, and a marketing surface is exactly where those get invented.",
-      "Don't ship a screenshot without checking it for real pupil data, and disclose authored demo marks as such."
+      "Don't ship a screenshot without checking it for real pupil data, and disclose authored demo marks as such.",
+      "Don't use a skill-* green for anything that is not a rung of the achievement ladder."
     ]
   }
 }

@@ -20,6 +20,11 @@ colors:
   text-on-color: "#FFFFFF"
   brand-blue: "#32448A"
   scroll-thumb: "#B9CBDD"
+  skill-beginning: "#FDBA74"
+  skill-easy: "#A9C785"
+  skill-medium: "#639922"
+  skill-advanced: "#4C7419"
+  skill-extra: "#3A5A11"
 typography:
   display:
     fontFamily: "Nunito, system-ui, -apple-system, 'Segoe UI', sans-serif"
@@ -156,7 +161,7 @@ now the whole page's rule, which is why nothing here is a pill or a circle.
 
 **Key Characteristics:**
 
-- Left-aligned throughout; the content edge never moves between sections.
+- Left-aligned throughout; the content edge holds across every section but one — the õpipuu figure, which is deliberately wider.
 - Alternating `bg-primary` / `surface-sub` bands give section rhythm without rules or dividers.
 - Every icon is Lucide, inlined, inheriting `currentColor` — never given a colour of its own.
 - Two hues only: a blue that carries every interactive surface, and an amber that appears exactly once.
@@ -195,6 +200,18 @@ pixels up, a near-miss would read as a mistake rather than as a second blue.
 Do not reach for it for anything that is not the word EdUp. 8.52:1 on the page
 ground.
 
+**The Ladder Is Not Decoration.** The five `skill-*` greens (plus the orange
+at the bottom) are the application's achievement ramp, copied from `App.css`
+`--skill-*` along with the `--color-green` family it rides. They appear only in
+the õpipuu panel, where each one *means* a rung — Harjutamisel through
+Laiendamas — and they carry that meaning identically in the screenshot above
+the panel. The stylesheet keeps App.css's `color-mix()` expressions rather than
+resolved hexes so the two surfaces cannot drift; the values listed in the
+frontmatter are what those expressions currently compute to. There is
+deliberately **no** `skill-none`: "not started" is an absence, drawn as an
+outline, and Alustatud is the same empty leaf with a dashed green edge. Never
+use a ladder colour for anything that is not a rung.
+
 **The Two Neutrals Rule.** Borders are `rgba()` black at 9% and 6%, not a
 grey. They sit on both `surface-card` and `surface-sub` without a seam, which
 a fixed grey cannot do across two backgrounds.
@@ -221,9 +238,18 @@ the reading line is not.
 
 ## Layout
 
-`.wrap` caps at 1180px with `--gutter` padding and is the only container. Every
-section is `padding: var(--section) 0` and alternates background between
-`bg-primary` and `surface-sub`.
+`.wrap` caps at 1180px with `--gutter` padding and is the container for every
+section but one. Every section is `padding: var(--section) 0` and alternates
+background between `bg-primary` and `surface-sub`.
+
+**The One Wide Section Rule.** `#opirada` uses `.wrap--wide` (1520px) because
+the õpipuu is the page's proof and cannot be both legible and narrow: the tree
+is a raster with a fixed aspect, so at the 1180px column a readable rendering
+was 647px tall and pushed the summary panel below it, making the figure taller
+than a laptop screen. The extra width buys the panel a column *beside* the
+tree instead. This is the only section allowed to opt out, its left edge does
+move relative to the rest of the page, and that cost was accepted knowingly —
+do not extend the exception to a second section without the same argument.
 
 Both multi-column blocks are `repeat(auto-fit, minmax(…, 1fr))` grids — the
 feature pair at 320px, the step columns at 300px — so they collapse to one
@@ -287,6 +313,17 @@ hover.
 via `:where()` so it costs no specificity and every interactive element
 inherits it.
 
+**The õpipuu panel** sits in a ~330px column to the right of the tree and
+wraps beneath it under about 920px of content width. It is the one place the
+page reproduces application UI in markup rather than as a screenshot. Its legend uses the app's own oak-leaf
+glyph, copied from `oakTreeLayout.OAK_BLADE` — a **deliberate exception to the
+Lucide rule**, because the legend has to carry the same mark the canopy in the
+image above it does, and a generic swatch would break that link. Its bars are
+flex rows of `flex-grow`-weighted segments, so they need no JavaScript. The
+segments are colour-only, so every bar carries an `aria-label` naming its mix,
+and the two non-rung states get visible stand-ins — a grey wash for Alustamata,
+a green hatch for Alustatud — because an invisible segment reads as a gap.
+
 ## Do's and Don'ts
 
 - **Do** take colours from `frontend/src/App.css` and keep the token name.
@@ -295,6 +332,7 @@ inherits it.
 - **Do** cap every run of prose with a `ch` measure.
 - **Don't** introduce a pill or a circle. The shape language has three steps and none of them is round.
 - **Don't** add a third hue. Amber appears once, deliberately, and `brand-blue` is reserved for the letters of the wordmark.
+- **Don't** use a `skill-*` green for anything that is not a rung of the achievement ladder.
 - **Don't** load a font, script, or asset from a third-party origin — EU data residency is a product constraint, not a preference.
 - **Don't** add JavaScript for presentation. The page currently ships none.
 - **Don't** claim anything the evidence list in PRODUCT.md doesn't support: there are no testimonials, no named pilot schools, no efficacy data, and a marketing surface is exactly where those get invented.

@@ -47,6 +47,7 @@
 
   --bg-primary:#F4F9FF;
   --surface-card:#FFFFFF;
+  --text-on-color:#FFFFFF;   /* text/marks on a saturated fill */
   --surface-sub:#F0F4F9;
   --border-color:rgba(0,0,0,.09);
   --border-subtle:rgba(0,0,0,.06);
@@ -61,6 +62,29 @@
      App.css token. Used in exactly one place: the "Up" in the h1, so the
      lettering matches the logo sitting directly above it. */
   --brand-blue:#32448A;
+
+  /* The standing ladder, copied from App.css: the --skill-* ramp (:214–224) and
+     the --color-green family it rides (:78–82), as expressions rather than
+     resolved hexes so the two surfaces cannot drift. There is deliberately no
+     --skill-none — "not started" is an absence, drawn as an outline only, and
+     Alustatud is the same empty leaf with a dashed green edge. */
+  --color-green:#639922;
+  --color-green-strong:#4c7419;
+  --color-green-deep:#3a5a11;
+  --color-orange:#f97316;
+  --text-on-light:#1f2937;
+
+  --skill-beginning:#fdba74;
+  --skill-easy:color-mix(in srgb, var(--color-green) 55%, var(--text-on-color));
+  --skill-medium:var(--color-green);
+  --skill-advanced:var(--color-green-strong);
+  --skill-extra:var(--color-green-deep);
+
+  --skill-beginning-edge:var(--color-orange);
+  --skill-easy-edge:var(--color-green);
+  --skill-medium-edge:var(--color-green-strong);
+  --skill-advanced-edge:var(--color-green-deep);
+  --skill-extra-edge:color-mix(in srgb, var(--color-green) 45%, var(--text-on-color));
 
   --t-xs:.8rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.125rem;
   /* Radius tracks box size — the icon slots' own ratio (12px on a 46px
@@ -106,6 +130,10 @@ p{margin:0 0 1.1em;max-width:66ch}
 .num{font-variant-numeric:tabular-nums lining-nums;font-weight:800}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+/* The õpipuu figure is the page's proof and the one thing that needs more
+   room than the reading column: the tree has to stay legible while the
+   summary sits beside rather than under it. Only this section opts in. */
+.wrap--wide{max-width:1520px}
 section{padding:clamp(44px,6.5vw,86px) 0}
 .tint{background:var(--surface-sub)}
 
@@ -153,9 +181,66 @@ section{padding:clamp(44px,6.5vw,86px) 0}
   font-size:var(--t-sm);font-weight:700;text-decoration:none}
 .aud a:hover{color:var(--accent-strong);text-decoration:underline;text-underline-offset:.25em}
 
+/* Tree and summary side by side; below ~920px of content width the flex
+   basis values wrap and the panel drops under the picture on its own. */
+.art__split{display:flex;flex-wrap:wrap;align-items:flex-start;gap:24px 30px}
+.art__fig{flex:1 1 560px;min-width:0;display:block;margin:0}
 .art{margin-top:clamp(18px,2.4vw,26px);background:var(--surface-card);border:1px solid var(--border-color);
   border-radius:var(--r-card);box-shadow:var(--sh-3);padding:clamp(14px,2vw,22px)}
 .shot{width:100%;height:auto;border-radius:var(--r-sm);border:1px solid var(--border-color)}
+.art__cap{font-size:var(--t-xs);color:var(--text-secondary);margin:14px 4px 0;font-weight:600}
+
+/* ── the õpipuu summary panel ───────────────────────────────────────────
+   Rebuilt as markup rather than baked into the screenshot: inside the image
+   these numbers rendered at ~7px, and as text they are selectable, readable
+   and available to a screen reader. The leaf glyph and the tier roles are the
+   application's own (StudyPathOakTree), so the legend keys the tree above it.
+   The bars are colour-only, so every one carries an aria-label naming its mix. */
+.oakp{flex:0 1 330px;min-width:270px;display:flex;flex-wrap:wrap;
+  align-items:start;align-content:start;gap:22px 40px}
+.oakp__col{flex:1 1 260px;min-width:0;padding:0}
+.oakp__title{margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--text-secondary)}
+.oakp__fig{margin:0;line-height:1}
+.oakp__fig strong{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--text-primary)}
+.oakp__fig span{font-size:var(--t-sm);color:var(--text-secondary);font-weight:600}
+.oakp__bar,.oakp__track{display:flex;border-radius:var(--r-xs);
+  overflow:hidden;background:var(--surface-sub)}
+.oakp__bar{max-width:420px;height:10px;margin:12px 0 14px}
+.oakp__track{height:6px;margin-top:4px}
+.seg{display:block;background:var(--leaf-fill)}
+/* The two non-rung states are drawn on a leaf as an absence; an invisible bar
+   segment would read as a gap, so each gets a visible stand-in. */
+.seg.tier-none{background:color-mix(in srgb, var(--text-muted) 35%, transparent)}
+.seg.tier-alustatud{background:repeating-linear-gradient(-45deg,
+  color-mix(in srgb, var(--color-green-strong) 60%, transparent) 0 3px, transparent 3px 6px)}
+.oakp__legend{list-style:none;margin:0;padding:0;max-width:420px;display:flex;flex-direction:column;gap:7px}
+.oakp__legend li{display:flex;align-items:center;gap:9px;font-size:var(--t-xs);
+  color:var(--text-secondary);font-weight:600}
+.oakp__legend b{margin-left:auto;font-weight:800;color:var(--text-body);
+  font-variant-numeric:tabular-nums}
+.oakp__rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.oakp__row{display:flex;align-items:baseline;gap:10px;margin:0;font-size:var(--t-xs);
+  color:var(--text-dim);font-weight:600}
+.oakp__row span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.oakp__row b{margin-left:auto;flex:none;font-weight:800;color:var(--text-secondary);
+  font-variant-numeric:tabular-nums}
+
+/* The oak-leaf glyph, copied from the application (oakTreeLayout.OAK_BLADE).
+   A deliberate exception to the Lucide rule: it is product artwork, and the
+   legend has to carry the same mark the canopy does. */
+.leaf{flex-shrink:0;display:block}
+.leaf .blade{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1.6;stroke-linejoin:round}
+.leaf .vein{fill:none;stroke:var(--leaf-edge);stroke-width:1.3}
+.tier-none{--leaf-fill:transparent;--leaf-edge:var(--text-muted)}
+.tier-alustatud{--leaf-fill:transparent;--leaf-edge:var(--color-green-strong)}
+.tier-alustatud .blade{stroke-dasharray:3 2.5}
+.tier-beginning{--leaf-fill:var(--skill-beginning);--leaf-edge:var(--skill-beginning-edge)}
+.tier-easy{--leaf-fill:var(--skill-easy);--leaf-edge:var(--skill-easy-edge)}
+.tier-medium{--leaf-fill:var(--skill-medium);--leaf-edge:var(--skill-medium-edge)}
+.tier-advanced{--leaf-fill:var(--skill-advanced);--leaf-edge:var(--skill-advanced-edge)}
+.tier-extra{--leaf-fill:var(--skill-extra);--leaf-edge:var(--skill-extra-edge)}
+.oak-beyond .blade{stroke:var(--accent-alt);stroke-width:2.4}
 
 /* ── feature pair ───────────────────────────────────────────────────────*/
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -167,7 +252,7 @@ section{padding:clamp(44px,6.5vw,86px) 0}
   display:flex;align-items:center;justify-content:center}
 .feat--a .feat__ico{background:var(--accent-soft);color:var(--accent-strong)}
 .feat--b .feat__ico{background:var(--accent-alt-soft);color:var(--accent-alt)}
-.feat h3{margin:0 0 6px;font-size:var(--t-md)}
+.feat h2{margin:0 0 6px;font-size:var(--t-md);line-height:1.3}
 .feat p{margin:0;font-size:var(--t-sm);color:var(--text-secondary);max-width:46ch}
 
 /* ── steps ──────────────────────────────────────────────────────────────*/
@@ -221,9 +306,8 @@ section{padding:clamp(44px,6.5vw,86px) 0}
 .foot small{color:var(--text-secondary);font-size:var(--t-xs);font-weight:600}
 .soc{gap:14px}
 .soc a{display:inline-flex;align-items:center;justify-content:center;
-  width:36px;height:36px;border-radius:var(--r-sm);color:var(--text-secondary)}
+  width:44px;height:44px;border-radius:var(--r-sm);color:var(--text-secondary)}
 .soc a:hover{background:var(--accent-soft);color:var(--accent-strong)}
-.art picture{display:block}
 
 
 /* ── one authored moment ────────────────────────────────────────────────*/
@@ -298,45 +382,133 @@ section{padding:clamp(44px,6.5vw,86px) 0}
     </div></div>
   </section>
 
-  <section class="tint" id="opirada">
+  <section class="tint">
     <div class="wrap">
+        <div class="feats">
+          <div class="feat feat--a">
+            <span class="feat__ico"><svg class="ico ico--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></span>
+            <div>
+              <h2>Õpilase arengu terviklik ülevaade.</h2>
+              <p>Õpetaja ja õpilane näevad, millised oskused on õpilasel omandatud ja
+                millised vajavad veel arendamist. Õpilase areng on nähtav nii klassi
+                õpitulemuste lõikes kui ka üle kooliastme, aidates märgata arengut pikema
+                aja jooksul — esialgu matemaatikas.</p>
+            </div>
+          </div>
+          <div class="feat feat--b">
+            <span class="feat__ico"><svg class="ico ico--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5H3"></path><path d="M12 19H3"></path><path d="M14 3v4"></path><path d="M16 17v4"></path><path d="M21 12h-9"></path><path d="M21 19h-5"></path><path d="M21 5h-7"></path><path d="M8 10v4"></path><path d="M8 12H3"></path></svg></span>
+            <div>
+              <h2>Diferentseeritud ülesanded</h2>
+              <p>Õpetaja saab tehisintellekti (TI) abiga luua, tagasisidestada ja hinnata
+                eri raskusastmega ülesandeid, mis lähtuvad õpiväljunditest ning kohanduvad
+                õpilase oskuste, arenguvajaduste ja edenemisega.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="opirada">
+    <div class="wrap wrap--wide">
       <h2>Õpipuu — õpilaste teadmiste ja oskuste areng</h2>
-      <div class="feats">
-        <div class="feat feat--a">
-          <span class="feat__ico"><svg class="ico ico--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></span>
-          <div>
-            <h3>Õpilase arengu terviklik ülevaade.</h3>
-            <p>Õpetaja ja õpilane näevad, millised oskused on õpilasel omandatud ja
-              millised vajavad veel arendamist. Õpilase areng on nähtav nii klassi
-              õpitulemuste lõikes kui ka üle kooliastme, aidates märgata arengut pikema
-              aja jooksul — esialgu matemaatikas.</p>
-          </div>
-        </div>
-        <div class="feat feat--b">
-          <span class="feat__ico"><svg class="ico ico--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5H3"></path><path d="M12 19H3"></path><path d="M14 3v4"></path><path d="M16 17v4"></path><path d="M21 12h-9"></path><path d="M21 19h-5"></path><path d="M21 5h-7"></path><path d="M8 10v4"></path><path d="M8 12H3"></path></svg></span>
-          <div>
-            <h3>Diferentseeritud ülesanded</h3>
-            <p>Õpetaja saab tehisintellekti (TI) abiga luua, tagasisidestada ja hinnata
-              eri raskusastmega ülesandeid, mis lähtuvad õpiväljunditest ning kohanduvad
-              õpilase oskuste, arenguvajaduste ja edenemisega.</p>
-          </div>
-        </div>
-      </div>
       <div class="art">
+        <div class="art__split">
         <!-- Art-directed, not just fluid: below 760px the app itself lays the
              õpirada out portrait — narrower canvas, taller tree, stacked panel —
              so the narrow screen gets that capture rather than a wide one
              shrunk to illegibility. -->
-        <picture>
-          <source media="(max-width:760px)" srcset="opirada-kitsas.webp" width="900" height="1355">
-          <img class="shot" src="opirada.webp" width="2100" height="1165" decoding="async"
-               alt="EdUp õpirada vaade rakenduses: 4. klassi matemaatika tüviteemad ja teemad tammepuuna, iga leht on üks õpitulemus ja lehe värv näitab omandatuse astet. Kõrval on kokkuvõte, mis loendab õpitulemused astmete kaupa — alustamata, alustatud, harjutamisel, arenemas, kinnistumas, omandatud, laiendamas — ning tüviteemade kaetus.">
+        <picture class="art__fig">
+          <source media="(max-width:760px)" srcset="opirada-kitsas.webp" width="900" height="938">
+          <img class="shot" src="opirada.webp" width="1820" height="1008" decoding="async"
+               alt="EdUp õpirada vaade rakenduses: 4. klassi matemaatika tüviteemad ja teemad tammepuuna, iga leht on üks õpitulemus ja lehe värv näitab omandatuse astet.">
         </picture>
+        <div class="oakp">
+          <section class="oakp__col">
+            <h3 class="oakp__title">Kokkuvõte</h3>
+            <p class="oakp__fig"><strong>22</strong> <span>/ 29 hinnatud</span></p>
+            <div class="oakp__bar" role="img" aria-label="29 õpitulemust: 4 alustamata, 3 alustatud, 4 harjutamisel, 6 arenemas, 6 kinnistumas, 4 omandatud, 2 laiendamas.">
+              <span class="seg tier-none" style="flex-grow:4"></span>
+              <span class="seg tier-alustatud" style="flex-grow:3"></span>
+              <span class="seg tier-beginning" style="flex-grow:4"></span>
+              <span class="seg tier-easy" style="flex-grow:6"></span>
+              <span class="seg tier-medium" style="flex-grow:6"></span>
+              <span class="seg tier-advanced" style="flex-grow:4"></span>
+              <span class="seg tier-extra" style="flex-grow:2"></span>
+            </div>
+            <ul class="oakp__legend">
+              <li><svg class="leaf tier-none" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Alustamata</span><b>4</b></li>
+              <li><svg class="leaf tier-alustatud" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Alustatud</span><b>3</b></li>
+              <li><svg class="leaf tier-beginning" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Harjutamisel (&lt;50%)</span><b>4</b></li>
+              <li><svg class="leaf tier-easy" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Arenemas (50–74%)</span><b>6</b></li>
+              <li><svg class="leaf tier-medium" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Kinnistumas (75–89%)</span><b>6</b></li>
+              <li><svg class="leaf tier-advanced" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Omandatud (90–100%)</span><b>4</b></li>
+              <li><svg class="leaf tier-extra oak-beyond" viewBox="-1 -13 38 26" width="30" height="20" aria-hidden="true"><path class="blade" d="M 6 0 C 6.5 -3 8.5 -5.5 11.5 -5 C 11 -8.5 14.5 -10.5 17 -8.5 C 17.5 -11.5 22 -12 24 -9.5 C 27 -10.5 30 -8 29 -5 C 32 -4.5 33.5 -2.5 34 0 C 33.5 2.5 32 4.5 29 5 C 30 8 27 10.5 24 9.5 C 22 12 17.5 11.5 17 8.5 C 14.5 10.5 11 8.5 11.5 5 C 8.5 5.5 6.5 3 6 0 Z"></path><path class="vein" d="M 0 0 L 30 0"></path></svg><span>Laiendamas (&gt;100%)</span><b>2</b></li>
+            </ul>
+          </section>
+          <section class="oakp__col">
+            <h3 class="oakp__title">Tüviteemad</h3>
+            <ul class="oakp__rows">
+              <li>
+                <p class="oakp__row"><span>Naturaalarvud ja arvutamine</span><b>7/9</b></p>
+                <div class="oakp__track" role="img" aria-label="Naturaalarvud ja arvutamine: 2 alustatud, 1 harjutamisel, 2 arenemas, 2 kinnistumas, 1 omandatud, 1 laiendamas.">
+                  <span class="seg tier-alustatud" style="flex-grow:2"></span>
+                  <span class="seg tier-beginning" style="flex-grow:1"></span>
+                  <span class="seg tier-easy" style="flex-grow:2"></span>
+                  <span class="seg tier-medium" style="flex-grow:2"></span>
+                  <span class="seg tier-advanced" style="flex-grow:1"></span>
+                  <span class="seg tier-extra" style="flex-grow:1"></span>
+                </div>
+              </li>
+              <li>
+                <p class="oakp__row"><span>Murrud, kümnendmurrud ja ratsionaalavaldised</span><b>1/2</b></p>
+                <div class="oakp__track" role="img" aria-label="Murrud, kümnendmurrud ja ratsionaalavaldised: 1 alustatud, 1 kinnistumas.">
+                  <span class="seg tier-alustatud" style="flex-grow:1"></span>
+                  <span class="seg tier-medium" style="flex-grow:1"></span>
+                </div>
+              </li>
+              <li>
+                <p class="oakp__row"><span>Protsent, statistika, tõenäosus ja andmed</span><b>1/1</b></p>
+                <div class="oakp__track" role="img" aria-label="Protsent, statistika, tõenäosus ja andmed: 1 arenemas.">
+                  <span class="seg tier-easy" style="flex-grow:1"></span>
+                </div>
+              </li>
+              <li>
+                <p class="oakp__row"><span>Avaldised, võrrandid ja võrrandisüsteemid</span><b>0/1</b></p>
+                <div class="oakp__track" role="img" aria-label="Avaldised, võrrandid ja võrrandisüsteemid: 1 alustamata.">
+                  <span class="seg tier-none" style="flex-grow:1"></span>
+                </div>
+              </li>
+              <li>
+                <p class="oakp__row"><span>Geomeetria</span><b>5/6</b></p>
+                <div class="oakp__track" role="img" aria-label="Geomeetria: 1 alustamata, 1 harjutamisel, 1 arenemas, 2 kinnistumas, 1 omandatud.">
+                  <span class="seg tier-none" style="flex-grow:1"></span>
+                  <span class="seg tier-beginning" style="flex-grow:1"></span>
+                  <span class="seg tier-easy" style="flex-grow:1"></span>
+                  <span class="seg tier-medium" style="flex-grow:2"></span>
+                  <span class="seg tier-advanced" style="flex-grow:1"></span>
+                </div>
+              </li>
+              <li>
+                <p class="oakp__row"><span>Mõõtühikud ja mõõtmine</span><b>8/10</b></p>
+                <div class="oakp__track" role="img" aria-label="Mõõtühikud ja mõõtmine: 2 alustamata, 2 harjutamisel, 2 arenemas, 1 kinnistumas, 2 omandatud, 1 laiendamas.">
+                  <span class="seg tier-none" style="flex-grow:2"></span>
+                  <span class="seg tier-beginning" style="flex-grow:2"></span>
+                  <span class="seg tier-easy" style="flex-grow:2"></span>
+                  <span class="seg tier-medium" style="flex-grow:1"></span>
+                  <span class="seg tier-advanced" style="flex-grow:2"></span>
+                  <span class="seg tier-extra" style="flex-grow:1"></span>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        </div>
+        <p class="art__cap">Tegu on näidisandmel põhjal loodud õpipuuga</p>
       </div>
     </div>
   </section>
 
-  <section id="how">
+  <section class="tint" id="how">
     <div class="wrap">
       <h2>Kuidas EdUp töötab</h2>
       <p class="lead">Lühidalt õpilase ja õpetaja vaates.</p>
@@ -378,7 +550,7 @@ section{padding:clamp(44px,6.5vw,86px) 0}
     </div>
   </section>
 
-  <section class="tint" id="faq">
+  <section id="faq">
     <div class="wrap">
       <h2>Korduma kippuvad küsimused</h2>
       <div class="kkk" style="margin-top:26px">
@@ -401,7 +573,7 @@ section{padding:clamp(44px,6.5vw,86px) 0}
     </div>
   </section>
 
-  <section id="contact">
+  <section class="tint" id="contact">
     <div class="wrap">
       <h2>Kontakt</h2>
       <p class="lead">Küsimuste või koostöösoovi korral võta ühendust.</p>
