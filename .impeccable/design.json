@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-31T00:00:00Z",
+  "title": "Design System: EdUp Public Site",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent Blue",
+        "canonical": "#4978A7",
+        "tonalRamp": ["#0C141D", "#152537", "#1F3A55", "#2D5B88", "#4978A7", "#7BA0C6", "#B4CBE1", "#DDEDFF"]
+      },
+      "accent-strong": {
+        "role": "primary",
+        "displayName": "Pressed Blue",
+        "canonical": "#2D5B88",
+        "tonalRamp": ["#080F17", "#101E2D", "#193047", "#2D5B88", "#4278AE", "#7AA1C9", "#B2CAE2", "#E1EDF8"]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Soft Blue",
+        "canonical": "#DDEDFF",
+        "tonalRamp": ["#0A121B", "#132434", "#1E3950", "#2C5175", "#4A7BAA", "#84AAD1", "#B8D3EF", "#DDEDFF"]
+      },
+      "accent-alt": {
+        "role": "secondary",
+        "displayName": "Accent Amber",
+        "canonical": "#A06A20",
+        "tonalRamp": ["#1A1105", "#2E1E09", "#4A3110", "#6B4717", "#A06A20", "#C79341", "#E0BC84", "#F6ECD9"]
+      },
+      "accent-alt-soft": {
+        "role": "secondary",
+        "displayName": "Soft Amber",
+        "canonical": "#F6ECD9",
+        "tonalRamp": ["#1A1408", "#2D230E", "#463815", "#66511F", "#96792F", "#C4A667", "#E1CCA4", "#F6ECD9"]
+      },
+      "bg-primary": {
+        "role": "neutral",
+        "displayName": "Page Ground",
+        "canonical": "#F4F9FF",
+        "tonalRamp": ["#0D1319", "#18222C", "#253443", "#36495C", "#5B7189", "#93A8BC", "#C9D9E8", "#F4F9FF"]
+      },
+      "surface-card": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#101214", "#1D2124", "#2C3237", "#40484F", "#697580", "#9BA6B0", "#CFD6DC", "#FFFFFF"]
+      },
+      "surface-sub": {
+        "role": "neutral",
+        "displayName": "Band Grey",
+        "canonical": "#F0F4F9",
+        "tonalRamp": ["#0E1114", "#1A1F24", "#282F36", "#3B444D", "#64707B", "#98A4AF", "#CBD4DD", "#F0F4F9"]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Heading Ink",
+        "canonical": "#1B2025",
+        "tonalRamp": ["#0A0C0E", "#12161A", "#1B2025", "#2C3339", "#4E5359", "#7C8186", "#B2B7BC", "#E8EBEE"]
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#33393E",
+        "tonalRamp": ["#0B0D0F", "#171A1D", "#242A2E", "#33393E", "#565C62", "#868C92", "#B9BEC3", "#E9ECEF"]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "#65696F",
+        "tonalRamp": ["#0F1113", "#1B1E21", "#2A2E32", "#3D4247", "#65696F", "#8F949A", "#BEC2C7", "#ECEEF0"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#7C8186",
+        "tonalRamp": ["#121416", "#1F2225", "#2E3236", "#434850", "#5F6469", "#7C8186", "#AFB4B9", "#E4E7E9"]
+      },
+      "scroll-thumb": {
+        "role": "neutral",
+        "displayName": "Scrollbar Thumb",
+        "canonical": "#B9CBDD",
+        "tonalRamp": ["#0D1319", "#18212B", "#253340", "#354758", "#54718D", "#8AA5BE", "#B9CBDD", "#E6EEF6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The h1 only — one per page." },
+      "title": { "displayName": "Title", "purpose": "Section headings (h2)." },
+      "subhead": { "displayName": "Subhead", "purpose": "Card and step headings (h3)." },
+      "lead": { "displayName": "Lead", "purpose": "The sentence under a section heading, capped at 58ch." },
+      "body": { "displayName": "Body", "purpose": "Default prose. 17px, weight 500 — Nunito goes soft at 400." },
+      "body-mobile": { "displayName": "Body (≤760px)", "purpose": "The page's only typographic breakpoint." },
+      "label": { "displayName": "Label", "purpose": "Nav links, footer links, audience row, step numbers." },
+      "chip": { "displayName": "Chip", "purpose": "Pills and role tags. Always 800 weight." }
+    },
+    "shadows": [
+      { "name": "sh-1", "value": "0 1px 2px rgba(27,32,37,.06)", "purpose": "Feature cards, contact cards, accordion items. Barely there." },
+      { "name": "sh-2", "value": "0 4px 16px rgba(27,32,37,.08)", "purpose": "The step columns — the page's main content blocks." },
+      { "name": "sh-3", "value": "0 12px 32px rgba(27,32,37,.10)", "purpose": "The õpirada figure alone. The page's proof, and the only element allowed to float." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "The page's only easing. Colour transitions on buttons, nav links and accordion summaries, 180ms; the accordion chevron rotates over 300ms." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The only filled surface on the page. Rests dark and lightens toward the link colour on hover — no shadow, no lift.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Vaata, kuidas töötab <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:8px;background:#2D5B88;color:#fff;text-decoration:none;font-family:Nunito,system-ui,sans-serif;font-weight:800;font-size:1rem;padding:12px 24px;border:0;border-radius:12px;cursor:pointer;transition:background .18s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{background:#4978A7}.ds-btn:focus-visible{outline:3px solid #4978A7;outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "White with a 2px border, for a second action that must not compete with the primary.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Loe lähemalt</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2D5B88;text-decoration:none;font-family:Nunito,system-ui,sans-serif;font-weight:800;font-size:1rem;padding:12px 24px;border:2px solid rgba(0,0,0,.09);border-radius:12px;cursor:pointer;transition:background .18s cubic-bezier(.16,1,.3,1),border-color .18s cubic-bezier(.16,1,.3,1)}.ds-btn-ghost:hover{background:#DDEDFF;border-color:#DDEDFF}.ds-btn-ghost:focus-visible{outline:3px solid #4978A7;outline-offset:3px}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Labels a fact or an audience. Never interactive. 8px radius — a quarter of its ~30px height.",
+      "html": "<span class=\"ds-chip\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v16\"></path><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"></path></svg>Riiklik õppekava</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:8px;background:#DDEDFF;color:#2D5B88;border-radius:8px;padding:7px 16px;font-family:Nunito,system-ui,sans-serif;font-size:.8rem;font-weight:800}"
+    },
+    {
+      "name": "Step Number",
+      "kind": "custom",
+      "refersTo": "step-number",
+      "description": "The numeral beside each step. A rounded square, not a circle — it belongs to the same shape family as the icon slot.",
+      "html": "<span class=\"ds-step-n\">1</span>",
+      "css": ".ds-step-n{width:30px;height:30px;border-radius:8px;background:#DDEDFF;color:#2D5B88;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,system-ui,sans-serif;font-weight:900;font-size:.9rem}"
+    },
+    {
+      "name": "Icon Slot",
+      "kind": "custom",
+      "refersTo": "icon-slot",
+      "description": "46px square holding a 22px Lucide glyph. The slot whose 12px-on-46px ratio became the page's whole radius rule. The glyph carries no colour of its own.",
+      "html": "<span class=\"ds-ico-slot\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 7h6v6\"></path><path d=\"m22 7-8.5 8.5-5-5L2 17\"></path></svg></span>",
+      "css": ".ds-ico-slot{width:46px;height:46px;border-radius:12px;background:#DDEDFF;color:#2D5B88;display:inline-flex;align-items:center;justify-content:center}"
+    },
+    {
+      "name": "Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The step columns. 20px radius, the page's largest, with the middle shadow.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-h\">Näed oma arengut.</h3><p class=\"ds-card-p\">Saad jälgida, millised oskused on Sul juba hästi omandatud ja millele tasub järgmisena rohkem tähelepanu pöörata.</p></div>",
+      "css": ".ds-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:20px;box-shadow:0 4px 16px rgba(27,32,37,.08);padding:clamp(20px,3vw,32px);font-family:Nunito,system-ui,sans-serif;max-width:420px}.ds-card-h{margin:0 0 .25em;font-size:1rem;font-weight:800;letter-spacing:-.02em;color:#1B2025}.ds-card-p{margin:0;font-size:.9rem;line-height:1.65;color:#65696F;max-width:48ch}"
+    },
+    {
+      "name": "Accordion Item",
+      "kind": "custom",
+      "refersTo": "accordion-item",
+      "description": "The KKK row. Native <details> with the marker suppressed and a Lucide chevron that rotates 180° on open.",
+      "html": "<details class=\"ds-acc\" open><summary>Kas hinded pannakse automaatselt?<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></summary><p>Ei. Tehisintellekti hinne on alati detailne, kuid soovituslik.</p></details>",
+      "css": ".ds-acc{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:12px;box-shadow:0 1px 2px rgba(27,32,37,.06);font-family:Nunito,system-ui,sans-serif;max-width:520px}.ds-acc summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;font-weight:800;color:#1B2025;font-size:1rem;border-radius:12px;transition:background .18s cubic-bezier(.16,1,.3,1)}.ds-acc summary::-webkit-details-marker{display:none}.ds-acc summary svg{color:#4978A7;transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-acc[open] summary svg{transform:rotate(180deg)}.ds-acc summary:hover{background:#F0F4F9}.ds-acc p{padding:0 20px 18px;margin:0;font-size:.9rem;line-height:1.65;color:#65696F}"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Sticky, translucent over the page ground with a blur. Unsticks below 760px.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">EdUp</span><span class=\"ds-nav-links\"><a href=\"#\">Kuidas töötab</a><a href=\"#\">KKK</a><a href=\"#\">Kontakt</a><a class=\"ds-nav-btn\" href=\"#\">Logi sisse</a></span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 24px;background:rgba(244,249,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.09);font-family:Nunito,system-ui,sans-serif}.ds-nav-mark{font-weight:800;color:#1B2025}.ds-nav-links{display:flex;align-items:center;gap:20px}.ds-nav-links a{color:#65696F;text-decoration:none;font-weight:700;font-size:.9rem;transition:color .18s cubic-bezier(.16,1,.3,1)}.ds-nav-links a:hover{color:#1B2025}.ds-nav-btn,.ds-nav-btn:hover{background:#2D5B88;color:#fff;padding:12px 24px;border-radius:12px;font-weight:800;font-size:1rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The product, shown plainly.",
+    "overview": "This page took the standing exit in its direction round: the education-SaaS page done at the category standard, executed at full fidelity rather than subverted. Two earlier worlds were built and discarded — an angular ruled class-register, then a hand-invented blue — and the lesson of both is written into the rule below: nothing on this surface is invented.\n\nThe palette is not a brand palette designed for marketing. It is the application's own light theme, copied token-for-token out of frontend/src/App.css in the EdUp repo and kept under the same names, so the two surfaces can be diffed line by line. A visitor who clicks Logi sisse should not experience a change of world. The proof image is not an illustration of the product; it is a screenshot of it. The copy is the product owner's own Estonian.\n\nThe one composed decision is the shape language, and it is stated once: the corner radius tracks the size of the box, at roughly a quarter of its side. That ratio was already latent in the icon slots (12px on a 46px square) and is now the whole page's rule, which is why nothing here is a pill or a circle.",
+    "keyCharacteristics": [
+      "Left-aligned throughout; the content edge never moves between sections.",
+      "Alternating bg-primary / surface-sub bands give section rhythm without rules or dividers.",
+      "Every icon is Lucide, inlined, inheriting currentColor — never given a colour of its own.",
+      "Two hues only: a blue that carries every interactive surface, and an amber that appears exactly once.",
+      "No JavaScript. The page is static HTML and renders complete with scripting off."
+    ],
+    "rules": [
+      {
+        "name": "The Borrowed Palette Rule",
+        "body": "Every colour on this page is the application's own token under the application's own name. If a value needs to change, change it in frontend/src/App.css first and bring it across. Never tune a colour here to suit the marketing page — that is how the two surfaces drift into looking like two products.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Neutrals Rule",
+        "body": "Borders are rgba() black at 9% and 6%, not a grey. They sit on both surface-card and surface-sub without a seam, which a fixed grey cannot do across two backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measure Rule",
+        "body": "Prose is capped: 66ch for body paragraphs, 58ch for leads, 48ch inside step bodies, 46ch inside feature cards. The page is wide; the reading line is not.",
+        "section": "typography"
+      },
+      {
+        "name": "The Art Direction Rule",
+        "body": "The õpirada figure is not one image scaled. Below 760px a <picture> swaps to a separate capture of the application's own portrait layout, because a wide screenshot shrunk to phone width is unreadable, not responsive.",
+        "section": "layout"
+      },
+      {
+        "name": "The Quarter-Side Rule",
+        "body": "The corner radius is about a quarter of the box's shorter side, so it grows with the element instead of collapsing to a pill: 8px for chips and step numbers, 12px for buttons, icon slots, images and accordion items, 20px for cards and figures. Nothing on the page is border-radius 999px or 50%.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do take colours from frontend/src/App.css and keep the token name.",
+      "Do use Lucide for every glyph, inlined, with no color or stroke attribute so it inherits currentColor.",
+      "Do pick a radius by the size of the box, not by the kind of component.",
+      "Do cap every run of prose with a ch measure."
+    ],
+    "donts": [
+      "Don't introduce a pill or a circle. The shape language has three steps and none of them is round.",
+      "Don't add a third hue. Amber appears once, deliberately.",
+      "Don't load a font, script, or asset from a third-party origin — EU data residency is a product constraint, not a preference.",
+      "Don't add JavaScript for presentation. The page currently ships none.",
+      "Don't claim anything the evidence list in PRODUCT.md doesn't support: there are no testimonials, no named pilot schools, no efficacy data, and a marketing surface is exactly where those get invented.",
+      "Don't ship a screenshot without checking it for real pupil data, and disclose authored demo marks as such."
+    ]
+  }
+}

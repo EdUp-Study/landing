@@ -1,0 +1,13 @@
+# GitHub Pages builds this repo with Jekyll (there is no .nojekyll), which by
+# default converts any root-level .md file into a published page. The working
+# documents are version-controlled here but are not part of the public site, so
+# they are excluded from the build: they stay readable on GitHub and never
+# appear on educationaluplift.com.
+#
+# They are kept at the repo root rather than moved into a hidden directory
+# because the impeccable tooling resolves DESIGN.md from the project root only
+# (DESIGN_NAMES in scripts/context.mjs).
+exclude:
+  - PRODUCT.md
+  - DESIGN.md
+  - .impeccable

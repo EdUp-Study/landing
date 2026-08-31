@@ -1,0 +1,20 @@
+# This repo is public and its root is served by GitHub Pages, so anything
+# committed here is both readable on GitHub and fetchable from
+# educationaluplift.com. Keep it to the site itself.
+
+# Vendored AI-agent tooling — machine-local, ~750 files, not part of the site.
+.agent/
+.agents/
+.claude/
+.codex/
+.cursor/
+.gemini/
+
+# Impeccable working state: per-machine hook caches and large review captures.
+.impeccable/review/
+.impeccable/hook.cache.json
+.impeccable/hook.pending.json
+.impeccable/config.local.json
+
+.DS_Store
+.impeccable/questions/
