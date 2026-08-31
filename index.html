@@ -57,6 +57,11 @@
   --text-secondary:#65696F;
   --text-muted:#7C8186;
 
+  /* The wordmark's own blue (PRODUCT.md § Brand Commitments), not an
+     App.css token. Used in exactly one place: the "Up" in the h1, so the
+     lettering matches the logo sitting directly above it. */
+  --brand-blue:#32448A;
+
   --t-xs:.8rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.125rem;
   /* Radius tracks box size — the icon slots' own ratio (12px on a 46px
      slot, about a quarter of the side) applied to everything, so labels and
@@ -136,6 +141,8 @@ section{padding:clamp(44px,6.5vw,86px) 0}
 
 /* ── hero ───────────────────────────────────────────────────────────────*/
 .hero{padding-top:clamp(32px,4.5vw,58px)}
+.mark{white-space:nowrap}
+.mark span{color:var(--brand-blue)}
 .hero__solo{max-width:780px}
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;padding:0;list-style:none}
 .pills li{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);
@@ -278,7 +285,8 @@ section{padding:clamp(44px,6.5vw,86px) 0}
         <li>Riiklik õppekava</li>
         <li><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>Matemaatika</li>
       </ul>
-      <h1>Õppekaval põhinev õppe kohandamine ja õpilase personaalne õpitee.</h1>
+      <h1><span class="mark">Ed<span>Up</span></span> — Õppekaval põhinev õppe
+        kohandamine ja õpilase personaalne õpitee.</h1>
       <p class="lead">EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpetajad
         koostavad, tagasisidestavad ja hindavad tehisintellekti (TI) abiga õpiväljunditel
         põhinevaid ülesandeid, mis on õpilase oskustele kohandatud. Õpilase oskuste arengu
@@ -374,7 +382,7 @@ section{padding:clamp(44px,6.5vw,86px) 0}
     <div class="wrap">
       <h2>Korduma kippuvad küsimused</h2>
       <div class="kkk" style="margin-top:26px">
-        <details open><summary>Kellele EdUp on mõeldud?<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <details><summary>Kellele EdUp on mõeldud?<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
           <p>1.–9. klassi õpilastele, õpetajatele ja koolijuhtidele Eestis. Esialgu
             matemaatika õpetamiseks ja õppimiseks.</p></details>
         <details><summary>Kuidas tehisintellekt tagasisidet annab?<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>

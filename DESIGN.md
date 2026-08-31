@@ -18,6 +18,7 @@ colors:
   text-secondary: "#65696F"
   text-muted: "#7C8186"
   text-on-color: "#FFFFFF"
+  brand-blue: "#32448A"
   scroll-thumb: "#B9CBDD"
 typography:
   display:
@@ -159,6 +160,7 @@ now the whole page's rule, which is why nothing here is a pill or a circle.
 - Alternating `bg-primary` / `surface-sub` bands give section rhythm without rules or dividers.
 - Every icon is Lucide, inlined, inheriting `currentColor` — never given a colour of its own.
 - Two hues only: a blue that carries every interactive surface, and an amber that appears exactly once.
+- One borrowed constant beside them: the wordmark's own blue, on the wordmark's own letters and nowhere else.
 - No JavaScript. The page is static HTML and renders complete with scripting off.
 
 ## Colors
@@ -182,6 +184,16 @@ own token under the application's own name. If a value needs to change, change
 it in `frontend/src/App.css` first and bring it across. Never tune a colour
 here to suit the marketing page — that is how the two surfaces drift into
 looking like two products.
+
+**The Wordmark Blue Is Not A Palette Colour.** `brand-blue` (#32448A) is the
+logo's own blue, recorded in PRODUCT.md § Brand Commitments — not an App.css
+token, and the one value on this page that does not come from the application.
+It exists so the "Up" in the h1 matches the wordmark sitting directly above it,
+and it is used on those two letters and nowhere else. It is deliberately *not*
+`accent-strong` (#2D5B88): with the real logo in the masthead a few hundred
+pixels up, a near-miss would read as a mistake rather than as a second blue.
+Do not reach for it for anything that is not the word EdUp. 8.52:1 on the page
+ground.
 
 **The Two Neutrals Rule.** Borders are `rgba()` black at 9% and 6%, not a
 grey. They sit on both `surface-card` and `surface-sub` without a seam, which
@@ -282,7 +294,7 @@ inherits it.
 - **Do** pick a radius by the size of the box, not by the kind of component.
 - **Do** cap every run of prose with a `ch` measure.
 - **Don't** introduce a pill or a circle. The shape language has three steps and none of them is round.
-- **Don't** add a third hue. Amber appears once, deliberately.
+- **Don't** add a third hue. Amber appears once, deliberately, and `brand-blue` is reserved for the letters of the wordmark.
 - **Don't** load a font, script, or asset from a third-party origin — EU data residency is a product constraint, not a preference.
 - **Don't** add JavaScript for presentation. The page currently ships none.
 - **Don't** claim anything the evidence list in PRODUCT.md doesn't support: there are no testimonials, no named pilot schools, no efficacy data, and a marketing surface is exactly where those get invented.

@@ -8,101 +8,276 @@
         "role": "primary",
         "displayName": "Accent Blue",
         "canonical": "#4978A7",
-        "tonalRamp": ["#0C141D", "#152537", "#1F3A55", "#2D5B88", "#4978A7", "#7BA0C6", "#B4CBE1", "#DDEDFF"]
+        "tonalRamp": [
+          "#0C141D",
+          "#152537",
+          "#1F3A55",
+          "#2D5B88",
+          "#4978A7",
+          "#7BA0C6",
+          "#B4CBE1",
+          "#DDEDFF"
+        ]
       },
       "accent-strong": {
         "role": "primary",
         "displayName": "Pressed Blue",
         "canonical": "#2D5B88",
-        "tonalRamp": ["#080F17", "#101E2D", "#193047", "#2D5B88", "#4278AE", "#7AA1C9", "#B2CAE2", "#E1EDF8"]
+        "tonalRamp": [
+          "#080F17",
+          "#101E2D",
+          "#193047",
+          "#2D5B88",
+          "#4278AE",
+          "#7AA1C9",
+          "#B2CAE2",
+          "#E1EDF8"
+        ]
       },
       "accent-soft": {
         "role": "primary",
         "displayName": "Soft Blue",
         "canonical": "#DDEDFF",
-        "tonalRamp": ["#0A121B", "#132434", "#1E3950", "#2C5175", "#4A7BAA", "#84AAD1", "#B8D3EF", "#DDEDFF"]
+        "tonalRamp": [
+          "#0A121B",
+          "#132434",
+          "#1E3950",
+          "#2C5175",
+          "#4A7BAA",
+          "#84AAD1",
+          "#B8D3EF",
+          "#DDEDFF"
+        ]
       },
       "accent-alt": {
         "role": "secondary",
         "displayName": "Accent Amber",
         "canonical": "#A06A20",
-        "tonalRamp": ["#1A1105", "#2E1E09", "#4A3110", "#6B4717", "#A06A20", "#C79341", "#E0BC84", "#F6ECD9"]
+        "tonalRamp": [
+          "#1A1105",
+          "#2E1E09",
+          "#4A3110",
+          "#6B4717",
+          "#A06A20",
+          "#C79341",
+          "#E0BC84",
+          "#F6ECD9"
+        ]
       },
       "accent-alt-soft": {
         "role": "secondary",
         "displayName": "Soft Amber",
         "canonical": "#F6ECD9",
-        "tonalRamp": ["#1A1408", "#2D230E", "#463815", "#66511F", "#96792F", "#C4A667", "#E1CCA4", "#F6ECD9"]
+        "tonalRamp": [
+          "#1A1408",
+          "#2D230E",
+          "#463815",
+          "#66511F",
+          "#96792F",
+          "#C4A667",
+          "#E1CCA4",
+          "#F6ECD9"
+        ]
       },
       "bg-primary": {
         "role": "neutral",
         "displayName": "Page Ground",
         "canonical": "#F4F9FF",
-        "tonalRamp": ["#0D1319", "#18222C", "#253443", "#36495C", "#5B7189", "#93A8BC", "#C9D9E8", "#F4F9FF"]
+        "tonalRamp": [
+          "#0D1319",
+          "#18222C",
+          "#253443",
+          "#36495C",
+          "#5B7189",
+          "#93A8BC",
+          "#C9D9E8",
+          "#F4F9FF"
+        ]
       },
       "surface-card": {
         "role": "neutral",
         "displayName": "Card White",
         "canonical": "#FFFFFF",
-        "tonalRamp": ["#101214", "#1D2124", "#2C3237", "#40484F", "#697580", "#9BA6B0", "#CFD6DC", "#FFFFFF"]
+        "tonalRamp": [
+          "#101214",
+          "#1D2124",
+          "#2C3237",
+          "#40484F",
+          "#697580",
+          "#9BA6B0",
+          "#CFD6DC",
+          "#FFFFFF"
+        ]
       },
       "surface-sub": {
         "role": "neutral",
         "displayName": "Band Grey",
         "canonical": "#F0F4F9",
-        "tonalRamp": ["#0E1114", "#1A1F24", "#282F36", "#3B444D", "#64707B", "#98A4AF", "#CBD4DD", "#F0F4F9"]
+        "tonalRamp": [
+          "#0E1114",
+          "#1A1F24",
+          "#282F36",
+          "#3B444D",
+          "#64707B",
+          "#98A4AF",
+          "#CBD4DD",
+          "#F0F4F9"
+        ]
       },
       "text-primary": {
         "role": "neutral",
         "displayName": "Heading Ink",
         "canonical": "#1B2025",
-        "tonalRamp": ["#0A0C0E", "#12161A", "#1B2025", "#2C3339", "#4E5359", "#7C8186", "#B2B7BC", "#E8EBEE"]
+        "tonalRamp": [
+          "#0A0C0E",
+          "#12161A",
+          "#1B2025",
+          "#2C3339",
+          "#4E5359",
+          "#7C8186",
+          "#B2B7BC",
+          "#E8EBEE"
+        ]
       },
       "text-body": {
         "role": "neutral",
         "displayName": "Body Ink",
         "canonical": "#33393E",
-        "tonalRamp": ["#0B0D0F", "#171A1D", "#242A2E", "#33393E", "#565C62", "#868C92", "#B9BEC3", "#E9ECEF"]
+        "tonalRamp": [
+          "#0B0D0F",
+          "#171A1D",
+          "#242A2E",
+          "#33393E",
+          "#565C62",
+          "#868C92",
+          "#B9BEC3",
+          "#E9ECEF"
+        ]
       },
       "text-secondary": {
         "role": "neutral",
         "displayName": "Secondary Ink",
         "canonical": "#65696F",
-        "tonalRamp": ["#0F1113", "#1B1E21", "#2A2E32", "#3D4247", "#65696F", "#8F949A", "#BEC2C7", "#ECEEF0"]
+        "tonalRamp": [
+          "#0F1113",
+          "#1B1E21",
+          "#2A2E32",
+          "#3D4247",
+          "#65696F",
+          "#8F949A",
+          "#BEC2C7",
+          "#ECEEF0"
+        ]
       },
       "text-muted": {
         "role": "neutral",
         "displayName": "Muted Ink",
         "canonical": "#7C8186",
-        "tonalRamp": ["#121416", "#1F2225", "#2E3236", "#434850", "#5F6469", "#7C8186", "#AFB4B9", "#E4E7E9"]
+        "tonalRamp": [
+          "#121416",
+          "#1F2225",
+          "#2E3236",
+          "#434850",
+          "#5F6469",
+          "#7C8186",
+          "#AFB4B9",
+          "#E4E7E9"
+        ]
       },
       "scroll-thumb": {
         "role": "neutral",
         "displayName": "Scrollbar Thumb",
         "canonical": "#B9CBDD",
-        "tonalRamp": ["#0D1319", "#18212B", "#253340", "#354758", "#54718D", "#8AA5BE", "#B9CBDD", "#E6EEF6"]
+        "tonalRamp": [
+          "#0D1319",
+          "#18212B",
+          "#253340",
+          "#354758",
+          "#54718D",
+          "#8AA5BE",
+          "#B9CBDD",
+          "#E6EEF6"
+        ]
+      },
+      "brand-blue": {
+        "role": "secondary",
+        "displayName": "Wordmark Blue",
+        "canonical": "#32448A",
+        "tonalRamp": [
+          "#080B17",
+          "#111629",
+          "#1B2445",
+          "#25315F",
+          "#32448A",
+          "#5D6DAF",
+          "#98A2CE",
+          "#E3E7F4"
+        ]
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The h1 only — one per page." },
-      "title": { "displayName": "Title", "purpose": "Section headings (h2)." },
-      "subhead": { "displayName": "Subhead", "purpose": "Card and step headings (h3)." },
-      "lead": { "displayName": "Lead", "purpose": "The sentence under a section heading, capped at 58ch." },
-      "body": { "displayName": "Body", "purpose": "Default prose. 17px, weight 500 — Nunito goes soft at 400." },
-      "body-mobile": { "displayName": "Body (≤760px)", "purpose": "The page's only typographic breakpoint." },
-      "label": { "displayName": "Label", "purpose": "Nav links, footer links, audience row, step numbers." },
-      "chip": { "displayName": "Chip", "purpose": "Pills and role tags. Always 800 weight." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The h1 only — one per page."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings (h2)."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Card and step headings (h3)."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The sentence under a section heading, capped at 58ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default prose. 17px, weight 500 — Nunito goes soft at 400."
+      },
+      "body-mobile": {
+        "displayName": "Body (≤760px)",
+        "purpose": "The page's only typographic breakpoint."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, footer links, audience row, step numbers."
+      },
+      "chip": {
+        "displayName": "Chip",
+        "purpose": "Pills and role tags. Always 800 weight."
+      }
     },
     "shadows": [
-      { "name": "sh-1", "value": "0 1px 2px rgba(27,32,37,.06)", "purpose": "Feature cards, contact cards, accordion items. Barely there." },
-      { "name": "sh-2", "value": "0 4px 16px rgba(27,32,37,.08)", "purpose": "The step columns — the page's main content blocks." },
-      { "name": "sh-3", "value": "0 12px 32px rgba(27,32,37,.10)", "purpose": "The õpirada figure alone. The page's proof, and the only element allowed to float." }
+      {
+        "name": "sh-1",
+        "value": "0 1px 2px rgba(27,32,37,.06)",
+        "purpose": "Feature cards, contact cards, accordion items. Barely there."
+      },
+      {
+        "name": "sh-2",
+        "value": "0 4px 16px rgba(27,32,37,.08)",
+        "purpose": "The step columns — the page's main content blocks."
+      },
+      {
+        "name": "sh-3",
+        "value": "0 12px 32px rgba(27,32,37,.10)",
+        "purpose": "The õpirada figure alone. The page's proof, and the only element allowed to float."
+      }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "The page's only easing. Colour transitions on buttons, nav links and accordion summaries, 180ms; the accordion chevron rotates over 300ms." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "The page's only easing. Colour transitions on buttons, nav links and accordion summaries, 180ms; the accordion chevron rotates over 300ms."
+      }
     ],
     "breakpoints": [
-      { "name": "mobile", "value": "760px" }
+      {
+        "name": "mobile",
+        "value": "760px"
+      }
     ]
   },
   "components": [
@@ -179,12 +354,18 @@
       "Alternating bg-primary / surface-sub bands give section rhythm without rules or dividers.",
       "Every icon is Lucide, inlined, inheriting currentColor — never given a colour of its own.",
       "Two hues only: a blue that carries every interactive surface, and an amber that appears exactly once.",
+      "One borrowed constant beside them: the wordmark's own blue, on the wordmark's own letters and nowhere else.",
       "No JavaScript. The page is static HTML and renders complete with scripting off."
     ],
     "rules": [
       {
         "name": "The Borrowed Palette Rule",
         "body": "Every colour on this page is the application's own token under the application's own name. If a value needs to change, change it in frontend/src/App.css first and bring it across. Never tune a colour here to suit the marketing page — that is how the two surfaces drift into looking like two products.",
+        "section": "colors"
+      },
+      {
+        "name": "The Wordmark Blue Is Not A Palette Colour",
+        "body": "brand-blue (#32448A) is the logo's own blue, recorded in PRODUCT.md § Brand Commitments — not an App.css token, and the one value on this page that does not come from the application. It exists so the \"Up\" in the h1 matches the wordmark sitting directly above it, and it is used on those two letters and nowhere else. It is deliberately not accent-strong (#2D5B88): with the real logo in the masthead a few hundred pixels up, a near-miss would read as a mistake rather than as a second blue.",
         "section": "colors"
       },
       {
@@ -216,7 +397,7 @@
     ],
     "donts": [
       "Don't introduce a pill or a circle. The shape language has three steps and none of them is round.",
-      "Don't add a third hue. Amber appears once, deliberately.",
+      "Don't add a third hue. Amber appears once, deliberately, and brand-blue is reserved for the letters of the wordmark.",
       "Don't load a font, script, or asset from a third-party origin — EU data residency is a product constraint, not a preference.",
       "Don't add JavaScript for presentation. The page currently ships none.",
       "Don't claim anything the evidence list in PRODUCT.md doesn't support: there are no testimonials, no named pilot schools, no efficacy data, and a marketing surface is exactly where those get invented.",
