@@ -6,14 +6,14 @@
 <title>EdUp — õppekaval põhinev õppe kohandamine</title>
 <meta name="description" content="EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpetajad loovad, tagasisidestavad ja hindavad tehisintellekti abiga õpiväljunditel põhinevaid ülesandeid, mis on õpilase oskustele kohandatud.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.educationaluplift.com/">
+<link rel="canonical" href="https://educationaluplift.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EdUp">
 <meta property="og:locale" content="et_EE">
-<meta property="og:url" content="https://www.educationaluplift.com/">
+<meta property="og:url" content="https://educationaluplift.com/">
 <meta property="og:title" content="EdUp — õppekaval põhinev õppe kohandamine">
 <meta property="og:description" content="EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpiväljunditel põhinevad ülesanded, mis on õpilase oskustele kohandatud.">
-<meta property="og:image" content="https://www.educationaluplift.com/edup-wordmark.png">
+<meta property="og:image" content="https://educationaluplift.com/edup-wordmark.png">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="580">
 <meta name="twitter:card" content="summary">
@@ -310,31 +310,6 @@ section{padding:clamp(44px,6.5vw,86px) 0}
 .soc a:hover{background:var(--accent-soft);color:var(--accent-strong)}
 
 
-/* ── TARKUSEPÄEV 01.09.2026 — TEMPORARY ──────────────────────────────────
-   A one-day greeting band. Delete this whole block together with the
-   <section class="greet"> in the markup and the .greet line in the 760px
-   query below. `grep -n greet index.html` finds all three.
-   Nothing here invents a value: the band is the chip pair (accent-soft
-   ground, accent-strong ink) at full width, and the two marks sit on
-   card-sized white plates so a transparent logo has a ground of its own. */
-.greet{background:var(--accent-soft);border-bottom:1px solid var(--border-color);
-  padding:clamp(24px,3.2vw,38px) 0}
-.greet__msg{margin:0;max-width:32ch;color:var(--accent-strong);
-  font-size:clamp(1.25rem,2.6vw,1.85rem);line-height:1.25;font-weight:800;
-  letter-spacing:-.02em;text-wrap:balance}
-.greet__marks{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;
-  margin:22px 0 0;padding:0;list-style:none}
-.greet__marks li{background:var(--surface-card);border:1px solid var(--border-color);
-  border-radius:var(--r-card);box-shadow:var(--sh-1);
-  height:74px;padding:0 20px;display:flex;align-items:center}
-.greet__marks a{display:flex;align-items:center}
-/* Sized by height, never squashed — and not to the *same* height: the ILOA
-   lockup is 3.9:1 with its letterforms filling the box, the EdUp wordmark is
-   1.4:1 with the arrow above the lettering, so equal box heights would read
-   as a much larger ILOA. These two balance optically. */
-.greet__mark--edup img{height:54px;width:auto}
-.greet__mark--iloa img{height:42px;width:auto}
-
 /* ── one authored moment ────────────────────────────────────────────────*/
 @media (prefers-reduced-motion:no-preference){
   .btn,.kkk summary,.nav__links a,.aud a{
@@ -344,9 +319,6 @@ section{padding:clamp(44px,6.5vw,86px) 0}
 @media (max-width:760px){
   body{font-size:16px}
   .nav{position:static}
-  .greet__marks li{height:62px;padding:0 16px}          /* TARKUSEPÄEV — temporary */
-  .greet__mark--edup img{height:44px}                   /* TARKUSEPÄEV — temporary */
-  .greet__mark--iloa img{height:34px}                   /* TARKUSEPÄEV — temporary */
 }
 </style>
 </head>
@@ -389,28 +361,6 @@ section{padding:clamp(44px,6.5vw,86px) 0}
 </header>
 
 <main id="top">
-
-  <!-- ══ TARKUSEPÄEV 01.09.2026 — TEMPORARY ═══════════════════════════════════
-       Remove this whole <section> once the day is over, together with the
-       `.greet` block in the <style> above and the three .greet lines in the
-       760px media query. `grep -n greet index.html` finds all three sites.
-       ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="greet" aria-label="Tarkusepäeva tervitus">
-    <div class="wrap">
-      <p class="greet__msg">Head tarkusepäeva ja inspireerivat uut kooliaastat!</p>
-      <ul class="greet__marks">
-        <li class="greet__mark--edup">
-          <img src="edup-wordmark.png" width="800" height="580" alt="EdUp">
-        </li>
-        <li class="greet__mark--iloa">
-          <a href="https://www.haridusfond.ee/" target="_blank" rel="noopener noreferrer"
-             aria-label="Sihtasutus Iga Laps on Andekas (avaneb uues aknas)"><img
-             src="iloa-logo.png" width="1000" height="254"
-             alt="Sihtasutus Iga Laps on Andekas"></a>
-        </li>
-      </ul>
-    </div>
-  </section>
 
   <section class="hero">
     <div class="wrap"><div class="hero__solo">
