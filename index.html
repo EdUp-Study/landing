@@ -3,19 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EdUp — õppekaval põhinev õppe kohandamine</title>
-<meta name="description" content="EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpetajad loovad, tagasisidestavad ja hindavad tehisintellekti abiga õpiväljunditel põhinevaid ülesandeid, mis on õpilase oskustele kohandatud.">
+<!-- The title names matemaatika because that is the only subject that exists
+     today; the H1 below stays subject-neutral because that will not always be
+     true. When a second subject ships, this line changes and the H1 does not. -->
+<title>Diferentseeritud matemaatikaülesanded 1.–9. klassile | EdUp</title>
+<meta name="description" content="EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpiväljunditel põhinevad ülesanded, mis on õpilase oskustele kohandatud.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://educationaluplift.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EdUp">
 <meta property="og:locale" content="et_EE">
 <meta property="og:url" content="https://educationaluplift.com/">
-<meta property="og:title" content="EdUp — õppekaval põhinev õppe kohandamine">
+<!-- No "| EdUp" suffix here: og:site_name already renders the brand alongside
+     this, so repeating it just eats the preview's headline space. -->
+<meta property="og:title" content="Diferentseeritud matemaatikaülesanded 1.–9. klassile">
 <meta property="og:description" content="EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpiväljunditel põhinevad ülesanded, mis on õpilase oskustele kohandatud.">
 <meta property="og:image" content="https://educationaluplift.com/edup-wordmark.png">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="580">
+<meta property="og:image:alt" content="EdUp">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#4978A7">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -321,6 +327,119 @@ section{padding:clamp(44px,6.5vw,86px) 0}
   .nav{position:static}
 }
 </style>
+
+<!-- ── structured data ─────────────────────────────────────────────────────
+     One graph, four nodes, no third-party request — this is inert text that
+     crawlers read, not a script that runs.
+
+     Every string here is copied from what is already visible on the page. That
+     is Google's rule for FAQPage (markup must match the rendered answer word
+     for word) and it is also PRODUCT.md's rule: nothing is asserted here that
+     the page does not already say out loud.
+
+     Two deliberate absences, both from PRODUCT.md § Evidence on Hand:
+     SoftwareApplication carries no `offers` and no `aggregateRating`. Adding
+     either would earn a rich result, and there is no honest price or rating to
+     put in them. Leave them out.
+
+     If the <title>, meta description or a KKK answer above ever changes, the
+     matching string here has to change with it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://educationaluplift.com/#org",
+      "name": "EdUp",
+      "alternateName": "Educational Uplift",
+      "url": "https://educationaluplift.com/",
+      "logo": "https://educationaluplift.com/edup-wordmark.png",
+      "email": "info@educationaluplift.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tallinn",
+        "addressCountry": "EE"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/educational-uplift/",
+        "https://www.facebook.com/profile.php?id=61587215897593"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://educationaluplift.com/#website",
+      "url": "https://educationaluplift.com/",
+      "name": "EdUp",
+      "inLanguage": "et",
+      "publisher": { "@id": "https://educationaluplift.com/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://educationaluplift.com/#app",
+      "name": "EdUp",
+      "url": "https://educationaluplift.com/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "et",
+      "publisher": { "@id": "https://educationaluplift.com/#org" },
+      "description": "EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpiväljunditel põhinevad ülesanded, mis on õpilase oskustele kohandatud.",
+      "audience": [
+        { "@type": "EducationalAudience", "educationalRole": "teacher" },
+        { "@type": "EducationalAudience", "educationalRole": "student" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://educationaluplift.com/#faq",
+      "inLanguage": "et",
+      "isPartOf": { "@id": "https://educationaluplift.com/#website" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kellele EdUp on mõeldud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1.–9. klassi õpilastele, õpetajatele ja koolijuhtidele Eestis. Esialgu matemaatika õpetamiseks ja õppimiseks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuidas tehisintellekt tagasisidet annab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Õpilase lahendust analüüsib esmalt tehisintellekt ning koostab sellest detailse ülevaate. Õpetaja saab analüüsi tulemit kasutada hindamiseks, vajadusel seda kohandades ning seejärel õpilasega jagades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kas hinded pannakse automaatselt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei. Tehisintellekti hinne on alati detailne, kuid soovituslik — tulemus muutub õpilasele nähtavaks ainult pärast õpetaja ülevaatust ja kohandamist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kas EdUp lähtub Eesti õppekavast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jah, ülesanded ja õpiväljundid on seotud riikliku õppekavaga."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuidas kool EdUpiga liituda saab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Võta ühendust allpool toodud kontaktide kaudu, et arutada oma kooli liitumist."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <!--
@@ -594,7 +713,9 @@ section{padding:clamp(44px,6.5vw,86px) 0}
 
 <footer class="foot">
   <div class="foot__in">
-    <img src="edup-wordmark.png" width="800" height="580" alt="EdUp">
+    <!-- alt="" on purpose: this repeats the header wordmark, so a screen reader
+         announcing "EdUp" a second time adds nothing. Decorative here. -->
+    <img src="edup-wordmark.png" width="800" height="580" alt="">
     <nav aria-label="Õigusteave">
       <a href="privaatsuspoliitika.html">Privaatsuspoliitika</a>
       <a href="kasutustingimused.html">Kasutustingimused</a>

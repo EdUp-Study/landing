@@ -1,0 +1,14 @@
+# educationaluplift.com — everything here is public marketing copy. There is no
+# pupil data, no account area and no search-result page on this host, so there
+# is nothing to keep out of an index and the whole site is open to crawlers.
+#
+# AI crawlers are deliberately allowed. Estonian schools increasingly find tools
+# through answer engines rather than a result list, and the page carries no
+# personal data, so there is nothing to protect by refusing them. To reverse
+# that, add Disallow blocks for GPTBot, ClaudeBot, PerplexityBot and friends —
+# this is the only place that decision lives.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://educationaluplift.com/sitemap.xml
