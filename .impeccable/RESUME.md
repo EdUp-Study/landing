@@ -53,6 +53,32 @@ Note `timeout` does not exist on macOS; wrapping the capture in it silently
 fails. Chrome also takes >2 min to start when several instances contend, so run
 captures one at a time.
 
+## The social card (`og-card.png`)
+
+The 1200×630 `og:image`, added 2026-09-08. It replaced the bare
+`edup-wordmark.png`, which LinkedIn and Facebook were letterboxing into a small
+square because they crop to roughly 1.91:1; `twitter:card` moved from `summary`
+to `summary_large_image` at the same time.
+
+**It is generated, not hand-drawn — regenerate with `tools/build-og-card.py`**
+(system python3, no dependencies). The script writes an HTML card and
+screenshots it with headless Chrome at exactly 1200×630, so the type is the
+site's own self-hosted Nunito and every colour is a `:root` token copied from
+`index.html`. A card drawn with a raster library would drift from the page it
+represents; this one cannot.
+
+**The copy is the product owner's, as everywhere else.** The headline is the
+approved `<title>` string verbatim and the three chips are the hero pills. No
+new Estonian was written for it. `1.–9.&nbsp;klassile` is welded with a
+non-breaking space and the `h1` is capped at 720px so the headline always breaks
+into the same three lines — without both, "1.–9." orphans onto the middle line.
+
+Checked at build time: all four text/ground pairs pass WCAG (lowest is the pill
+text at 4.64:1 on white), and the headline stays legible downscaled to a 360px
+feed thumbnail, which is what the type-led design was chosen for.
+
+`tools/` is excluded in `_config.yml` — versioned for reproducibility, not served.
+
 ## Six known false positives in the design hook
 
 All measured, all safe to ignore — do not "fix" them:

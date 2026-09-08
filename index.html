@@ -18,11 +18,17 @@
      this, so repeating it just eats the preview's headline space. -->
 <meta property="og:title" content="Diferentseeritud matemaatikaülesanded 1.–9. klassile">
 <meta property="og:description" content="EdUp on Eesti 1.–9. klassi õpilastele mõeldud õppeplatvorm. Õpiväljunditel põhinevad ülesanded, mis on õpilase oskustele kohandatud.">
-<meta property="og:image" content="https://educationaluplift.com/edup-wordmark.png">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="580">
-<meta property="og:image:alt" content="EdUp">
-<meta name="twitter:card" content="summary">
+<!-- A purpose-built 1200×630 card, not the bare wordmark: LinkedIn and Facebook
+     crop to roughly 1.91:1, so the 800×580 logo was being letterboxed into a
+     small square. Regenerate with tools/build-og-card.py, which renders it in
+     Chrome from the same Nunito and the same :root tokens as this page. -->
+<meta property="og:image" content="https://educationaluplift.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EdUp — diferentseeritud matemaatikaülesanded 1.–9. klassile">
+<!-- summary_large_image, not summary: the card is built to be shown wide, and
+     "summary" would render it as a small square thumbnail instead. -->
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#4978A7">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">

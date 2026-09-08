@@ -18,3 +18,7 @@
 
 .DS_Store
 .impeccable/questions/
+
+# Scratch HTML that tools/build-og-card.py screenshots. og-card.png is the
+# artefact worth keeping; this is only the intermediate it renders from.
+tools/.card.build.html

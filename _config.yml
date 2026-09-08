@@ -11,3 +11,6 @@ exclude:
   - PRODUCT.md
   - DESIGN.md
   - .impeccable
+  # Build tooling for og-card.png. Version-controlled so the raster can be
+  # regenerated, but it is not itself part of the served site.
+  - tools
